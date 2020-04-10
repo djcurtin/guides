@@ -175,6 +175,7 @@ Gave us IP addresses ranging from 192.168.0.0 to 192.168.31.255, which means:
 
 32 * 256 = 8192 addresses in this subnetwork.
 ```
+Of course, I understand doing the powers of 256 is not a simple task so this is unlikely to be practical in any situation where a calculator is not handy, but I'm hoping this alternate explanation helps you understand better how subnet masks work.
 
 ### What are the subnetwork addresses?
 Finally, we have to ask how the individual subnetworks are broken down. We know the example above ended at 192.168.31.255, but what happens after that? What are the addresses of the other subnetworks? The short answer is: you simply have the same pattern extending until you reach 192.168.255.255.
@@ -264,4 +265,4 @@ When you see CIDR notation, unless you're being asked a specific question about 
 
 For instance, I repeatedly used 192.168.1.25 in examples throughout this explanation, but 192.168.1.25/24 would mean the same thing as 192.168.1.1/24. That's because the first non-255 subnet octet is the last one, so the network we are solving for is 192.168.1.X in both instances. Similarly, 192.168.1.25/19 means the same thing as 192.168.0.1/19 because the first non-255 subnet octet is octet 3, so the network we are solving for is 192.168.X.Y.
 
-So, if you're being asked to, for example, identify the network ID or broadcast ID, you would need to use a portion of the IP address supplied. If you're being asked whether the IP address is a valid one on the subnet, then you need to use the IP supplied. If you're being asked how many subnets are created by the CIDR, the actual IP supplied is largely useless. Do not let it distract you.
+So, if you're being asked to, for example, identify the network ID or broadcast ID, you would need to use a portion of the IP address supplied. If you're being asked whether the IP address is a valid one on the subnet, then you need to use the IP supplied. If you're being asked how many subnets are created by the CIDR, the actual IP supplied is largely useless. Do not let it distract you. The answer is just 2^(number of bits in the first non-255 subnet mask octet).
