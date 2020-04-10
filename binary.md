@@ -66,7 +66,7 @@ Of course, I did not need to write the multiplication out because 1xN = N and 0x
 You can see by this table that the maximum decimal value for a byte is the sum of all of these values, which is 255. Now let's examine a hypothetical byte value and convert it to decimal. We will use the value **10101010**. I will write it without the multiplication for simplicity and space reasons.
 
 ```
-10101010 = [2^7] + 0 [2^5] + 0 + [2^3] + 0 + [2^1] + 0
+10101010 = [2^7] + 0 + [2^5] + 0 + [2^3] + 0 + [2^1] + 0
          = 128 + 32 + 8 + 2
          = 170
 ```
